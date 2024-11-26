@@ -47,5 +47,5 @@ jobs:
     - name: Upload JAR files
       uses: actions/upload-artifact@v3
       with:
-        name: javaparser-jar-files
+        name: ${{ inputs.repo }}-jar-files
         path: staging/
