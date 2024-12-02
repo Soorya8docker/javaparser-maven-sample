@@ -33,7 +33,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: |
+           mvn -B package --file pom.xml; RC=$?
+           if [ $RC == 0 ]; then echo "True" fi
 
   publish-job:
     runs-on: ubuntu-latest
